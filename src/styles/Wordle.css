@@ -34,5 +34,19 @@
   }
   
   .absent {
-    background-color: lightgray;
+    background-color: rgb(169, 169, 169);
+  }
+  button{
+    background-color: rgb(21, 122, 255);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 10px;
+  }
+  input{
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
   }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Wordle.css';
 
-const WORD_LIST = ['apple', 'grape', 'peach', 'berry'];
+const WORD_LIST = ['apple', 'grape', 'peach', 'berry','melon'];
 const MAX_ATTEMPTS = 6;
 const WORD_LENGTH = 5;
 
@@ -28,7 +28,7 @@ const Wordle = () => {
     e.preventDefault();
     if (currentAttempt.length === WORD_LENGTH) {
       if (currentAttempt === word) {
-        setMessage('Congratulations! You guessed the word!');
+        setMessage(`Congratulations! You guessed the ${word} correctly!`);
         setIsGameOver(true);
       } else {
         setAttempts([...attempts, currentAttempt]);
@@ -73,9 +73,12 @@ const Wordle = () => {
           disabled={isGameOver}
           maxLength={WORD_LENGTH}
         />
-        <button type="submit" disabled={isGameOver}>Submit</button>
+        <button type="submit" disabled={isGameOver}>Check Word</button>
       </form>
       {message && <p>{message}</p>}
+      {isGameOver && (
+        <button onClick={() => window.location.reload()}>Play Again</button>
+      )}
     </div>
   );
 };
